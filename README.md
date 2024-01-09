@@ -1,10 +1,8 @@
 # Rick and Morty API consuming for Vue certification
 
-<div style="text-align: center;">
-    <div style="display:flex; gap:1rem; justify-content: center; text-align: center;">
-        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
-        <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" />
-    </div>
+<div style="display:flex; gap:1rem; justify-content: center; text-align: center;" align="center">
+    <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" />
+    <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" />
 </div>
 
 ## Project infos
