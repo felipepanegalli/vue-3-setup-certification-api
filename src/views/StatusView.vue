@@ -10,7 +10,7 @@
       ></v-select>
 
       <SpinnerLoader v-if="isLoading" />
-      <StatusList v-else :results="results" />
+      <StatusList v-else :results="data.results" />
     </div>
   </div>
 </template>
@@ -24,8 +24,11 @@ import SpinnerLoader from "@/components/SpinnerLoader.vue";
 const status = reactive(["alive", "dead", "unknown"]);
 const selectedStatus = ref("");
 const isLoading = ref(false);
-let pagination = reactive({});
-let results = reactive([]);
+
+const data = {
+  info: {},
+  results: [],
+};
 
 const getCharacters = async () => {
   isLoading.value = true;
@@ -39,8 +42,8 @@ const getCharacters = async () => {
     `${process.env.VUE_APP_API_URL}/character/${statusParam}`,
   );
 
-  Object.assign(pagination, response.data.pagination);
-  Object.assign(results, response.data.results);
+  data.pagination = response.data.pagination;
+  data.results = response.data.results;
   isLoading.value = false;
 };
 
